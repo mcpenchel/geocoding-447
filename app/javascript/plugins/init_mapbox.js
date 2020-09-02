@@ -17,6 +17,12 @@ const initMapbox = () => {
         .addTo(map);
     });
 
+    const bounds = new mapboxgl.LngLatBounds();
+    // stretches the bound to max longitude and latitude of markers
+    markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
+    // tells the map to respect the bounds!
+    map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
+
   }
 };
 
