@@ -9,6 +9,8 @@ class FlatsController < ApplicationController
     # To display static address, do something like this
     # @markers = [{lat: 12489.19, lng: 182912.12}]
 
+
+    # [{lat: 128912, lng: 182918291}, {lat: 111, lng: 2882}]
     @markers = @flats.geocoded.map do |flat|
       {
         lat: flat.latitude,
